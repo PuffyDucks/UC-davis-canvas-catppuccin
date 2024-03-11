@@ -7,13 +7,15 @@
 
 
 ## Preview
-<p> Preview using macchiato with pink accent </p>
-<img src="preview.png"/>
+<p >
+	<img src="preview.png"/>
+	<em>Macchiato theme with pink accent </em>
+</p>
 
 ## Usage
 
 1. Install the Stylus extension for <a href="https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne?pli=1">Chrome</a> or <a href= "https://addons.mozilla.org/en-US/firefox/addon/styl-us/"> Firefox </a>
-2. Drag in catppuccin.user.css file
+2. Drag catppuccin.user.css file into your browser to open, or install from <a href="https://userstyles.world/style/15195/catppuccin-for-uc-davis-canvas">UserStyles.World</a>
 2. Choose a theme and accent color
 3. Have fun with dark theme! :3
 

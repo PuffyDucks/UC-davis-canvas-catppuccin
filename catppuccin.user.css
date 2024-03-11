@@ -1,26 +1,19 @@
 /* ==UserStyle==
-@name         Dark Mode for UC Davis Canvas
-@version      0.0.1
-@namespace    puffyducks
-@description  Canvas dark mode implementation for UC Davis students
-@author       PuffyDucks
-@license      GNU-GPL v3.0
-@preprocessor   stylus
-@var select theme "Theme" ["Latte", "Frappe", "Macchiato", "Mocha*"]
-@var select accent-color "Accent" ["Rosewater*", "Flamingo", "Pink", "Mauve", "Red", "Maroon", "Peach", "Yellow", "Green", "Teal", "Blue", "Sapphire", "Sky", "Lavender", "Gray"]
+@name Catppuccin for UC Davis Canvas
+@version 0.0.1
+@namespace github.com/PuffyDucks/davis-canvas-dark-mode/
+@homepageURL https://github.com/PuffyDucks/davis-canvas-dark-mode
+@description Canvas dark mode implementation for UC Davis students using Catppuccin
+@author PuffyDucks
+@license MIT
+@preprocessor less
+@var select flavor "Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
+@var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire*", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
 ==/UserStyle== */
-
 @-moz-document url-prefix("https://canvas.ucdavis.edu/") {
-  @media (prefers-color-scheme: light) {
-      :root {
-          #catppuccin(@lightFlavor, @accentColor);
-      }
-  }
-  @media (prefers-color-scheme: dark) {
-      :root {
-          #catppuccin(@darkFlavor, @accentColor);
-      }
-  }
+  :root {
+          #catppuccin(@flavor, @accentColor);
+    }
 
   /* prettier-ignore */
   @catppuccin: {
