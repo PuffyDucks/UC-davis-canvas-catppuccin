@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Catppuccin for UC Davis Canvas
-@version 0.0.1
+@version 0.0.2
 @namespace github.com/PuffyDucks/davis-canvas-dark-mode/
 @homepageURL https://github.com/PuffyDucks/davis-canvas-dark-mode
 @description Canvas dark mode implementation for UC Davis students using Catppuccin
@@ -11,344 +11,807 @@
 @var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire*", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
 ==/UserStyle== */
 @-moz-document url-prefix("https://canvas.ucdavis.edu/") {
-  :root {
-          #catppuccin(@flavor, @accentColor);
+    :root {
+        #catppuccin(@flavor, @accentColor);
+        --ic-brand-primary-darkened-5: #00ACD7;
+        --ic-brand-primary-darkened-10: #00A3CC;
+        --ic-brand-primary-darkened-15: #009AC1;
+        --ic-brand-primary-lightened-5: #0CB8E3;
+        --ic-brand-primary-lightened-10: #19BCE4;
+        --ic-brand-primary-lightened-15: @accent-color;
+        --ic-brand-button--primary-bgd-darkened-5: #00ACD7;
+        --ic-brand-button--primary-bgd-darkened-15: @blue;
+        --ic-brand-button--secondary-bgd-darkened-5: @accent-color;
+        --ic-brand-button--secondary-bgd-darkened-15: @accent-color;
+        --ic-brand-font-color-dark-lightened-15: @accent-color;
+        --ic-brand-font-color-dark-lightened-28: @text;
+        --ic-link-color-darkened-10: @accent-color;
+        --ic-link-color-lightened-10: @accent-color;
+        --ic-brand-primary: @accent-color;
+        --ic-brand-font-color-dark: @text;
+        --ic-link-color: @accent-color;
+        --ic-brand-button--primary-bgd: var(--ic-brand-primary);
+        --ic-brand-button--primary-text: #ffffff;
+        --ic-brand-button--secondary-bgd: #002855;
+        --ic-brand-button--secondary-text: #ffffff;
+        --ic-brand-global-nav-bgd: @crust;
+        --ic-brand-global-nav-ic-icon-svg-fill: #ffffff;
+        --ic-brand-global-nav-ic-icon-svg-fill--active: @peach;
+        --ic-brand-global-nav-menu-item__text-color: #ffffff;
+        --ic-brand-global-nav-menu-item__text-color--active: #002855;
+        --ic-brand-global-nav-avatar-border: #ffffff;
+        --ic-brand-global-nav-menu-item__badge-bgd: @accent-color;
+        --ic-brand-global-nav-menu-item__badge-bgd--active: var(--ic-brand-primary);
+        --ic-brand-global-nav-menu-item__badge-text: #000000;
+        --ic-brand-global-nav-menu-item__badge-text--active: #ffffff;
+        --ic-brand-global-nav-logo-bgd: @crust;
+        --ic-brand-header-image: url('https://instructure-uploads.s3.amazonaws.com/account_34380000000000001/attachments/6557608/nav_white_200x200.svg');
+        --ic-brand-mobile-global-nav-logo: url('https://instructure-uploads.s3.amazonaws.com/account_34380000000000001/attachments/6557609/nav_color_200x200.svg');
+        --ic-brand-watermark-opacity: 1;
+        --ic-brand-favicon: url('https://instructure-uploads.s3.amazonaws.com/account_34380000000000001/attachments/12624/favicon_48x48.png?AWSAccessKeyId=AKIAJFNFXH2V2O7RPCAA&Expires=1931287172&Signature=z8dNcdocg%2BWfQXnmZyGkPx6KKjA%3D&response-cache-control=Cache-Control%3Amax-age%3D473364000%2C%20public&response-expires=473364000');
+        --ic-brand-apple-touch-icon: url('https://instructure-uploads.s3.amazonaws.com/account_34380000000000001/attachments/12625/mobile_180x180.png?AWSAccessKeyId=AKIAJFNFXH2V2O7RPCAA&Expires=1931287172&Signature=DuEKrQsPEBuUJFsmb%2BRAkrx1I5Q%3D&response-cache-control=Cache-Control%3Amax-age%3D473364000%2C%20public&response-expires=473364000');
+        --ic-brand-msapplication-tile-color: #002855;
+        --ic-brand-msapplication-tile-square: url('https://instructure-uploads.s3.amazonaws.com/account_34380000000000001/attachments/6557610/windows_square_558x558.png');
+        --ic-brand-msapplication-tile-wide: url('https://instructure-uploads.s3.amazonaws.com/account_34380000000000001/attachments/6557611/windows_wide_558x270.png');
+        --ic-brand-right-sidebar-logo: url('https://instructure-uploads.s3.amazonaws.com/account_34380000000000001/attachments/6557613/right_sidebar_720x280.png');
+        --ic-brand-Login-body-bgd-color: #335379;
+        --ic-brand-Login-body-bgd-shadow-color: #002855;
+        --ic-brand-Login-logo: url('https://instructure-uploads.s3.amazonaws.com/account_34380000000000001/attachments/6557615/nav_color_200x200.svg');
+        --ic-brand-Login-Content-bgd-color: none;
+        --ic-brand-Login-Content-border-color: none;
+        --ic-brand-Login-Content-inner-bgd: #ffffff;
+        --ic-brand-Login-Content-inner-border: #c99700;
+        --ic-brand-Login-Content-inner-body-bgd: #ffffff;
+        --ic-brand-Login-Content-inner-body-border: none;
+        --ic-brand-Login-Content-label-text-color: #002855;
+        --ic-brand-Login-Content-password-text-color: #008eaa;
+        --ic-brand-Login-footer-link-color: #ffffff;
+        --ic-brand-Login-footer-link-color-hover: #ffffff;
+        --ic-brand-Login-instructure-logo: #ffffff;
     }
 
-  /* prettier-ignore */
-  @catppuccin: {
-      @latte: {
-          @rosewater: #dc8a78;
-          @flamingo: #dd7878;
-          @pink: #ea76cb;
-          @mauve: #8839ef;
-          @red: #d20f39;
-          @maroon: #e64553;
-          @peach: #fe640b;
-          @yellow: #df8e1d;
-          @green: #40a02b;
-          @teal: #179299;
-          @sky: #04a5e5;
-          @sapphire: #209fb5;
-          @blue: #1e66f5;
-          @lavender: #7287fd;
-          @text: #4c4f69;
-          @subtext1: #5c5f77;
-          @subtext0: #6c6f85;
-          @overlay2: #7c7f93;
-          @overlay1: #8c8fa1;
-          @overlay0: #9ca0b0;
-          @surface2: #acb0be;
-          @surface1: #bcc0cc;
-          @surface0: #ccd0da;
-          @base: #eff1f5;
-          @mantle: #e6e9ef;
-          @crust: #dce0e8;
-      }
-      ;
-      @frappe: {
-          @rosewater: #f2d5cf;
-          @flamingo: #eebebe;
-          @pink: #f4b8e4;
-          @mauve: #ca9ee6;
-          @red: #e78284;
-          @maroon: #ea999c;
-          @peach: #ef9f76;
-          @yellow: #e5c890;
-          @green: #a6d189;
-          @teal: #81c8be;
-          @sky: #99d1db;
-          @sapphire: #85c1dc;
-          @blue: #8caaee;
-          @lavender: #babbf1;
-          @text: #c6d0f5;
-          @subtext1: #b5bfe2;
-          @subtext0: #a5adce;
-          @overlay2: #949cbb;
-          @overlay1: #838ba7;
-          @overlay0: #737994;
-          @surface2: #626880;
-          @surface1: #51576d;
-          @surface0: #414559;
-          @base: #303446;
-          @mantle: #292c3c;
-          @crust: #232634;
-      }
-      ;
-      @macchiato: {
-          @rosewater: #f4dbd6;
-          @flamingo: #f0c6c6;
-          @pink: #f5bde6;
-          @mauve: #c6a0f6;
-          @red: #ed8796;
-          @maroon: #ee99a0;
-          @peach: #f5a97f;
-          @yellow: #eed49f;
-          @green: #a6da95;
-          @teal: #8bd5ca;
-          @sky: #91d7e3;
-          @sapphire: #7dc4e4;
-          @blue: #8aadf4;
-          @lavender: #b7bdf8;
-          @text: #cad3f5;
-          @subtext1: #b8c0e0;
-          @subtext0: #a5adcb;
-          @overlay2: #939ab7;
-          @overlay1: #8087a2;
-          @overlay0: #6e738d;
-          @surface2: #5b6078;
-          @surface1: #494d64;
-          @surface0: #363a4f;
-          @base: #24273a;
-          @mantle: #1e2030;
-          @crust: #181926;
-      }
-      ;
-      @mocha: {
-          @rosewater: #f5e0dc;
-          @flamingo: #f2cdcd;
-          @pink: #f5c2e7;
-          @mauve: #cba6f7;
-          @red: #f38ba8;
-          @maroon: #eba0ac;
-          @peach: #fab387;
-          @yellow: #f9e2af;
-          @green: #a6e3a1;
-          @teal: #94e2d5;
-          @sky: #89dceb;
-          @sapphire: #74c7ec;
-          @blue: #89b4fa;
-          @lavender: #b4befe;
-          @text: #cdd6f4;
-          @subtext1: #bac2de;
-          @subtext0: #a6adc8;
-          @overlay2: #9399b2;
-          @overlay1: #7f849c;
-          @overlay0: #6c7086;
-          @surface2: #585b70;
-          @surface1: #45475a;
-          @surface0: #313244;
-          @base: #1e1e2e;
-          @mantle: #181825;
-          @crust: #11111b;
-      }
-      ;
-  }
+    /* prettier-ignore */
+    @catppuccin: {
+        @latte: {
+            @rosewater: #dc8a78;
+            @flamingo: #dd7878;
+            @pink: #ea76cb;
+            @mauve: #8839ef;
+            @red: #d20f39;
+            @maroon: #e64553;
+            @peach: #fe640b;
+            @yellow: #df8e1d;
+            @green: #40a02b;
+            @teal: #179299;
+            @sky: #04a5e5;
+            @sapphire: #209fb5;
+            @blue: #1e66f5;
+            @lavender: #7287fd;
+            @text: #4c4f69;
+            @subtext1: #5c5f77;
+            @subtext0: #6c6f85;
+            @overlay2: #7c7f93;
+            @overlay1: #8c8fa1;
+            @overlay0: #9ca0b0;
+            @surface2: #acb0be;
+            @surface1: #bcc0cc;
+            @surface0: #ccd0da;
+            @base: #eff1f5;
+            @mantle: #e6e9ef;
+            @crust: #dce0e8;
+        }
+        ;
+        @frappe: {
+            @rosewater: #f2d5cf;
+            @flamingo: #eebebe;
+            @pink: #f4b8e4;
+            @mauve: #ca9ee6;
+            @red: #e78284;
+            @maroon: #ea999c;
+            @peach: #ef9f76;
+            @yellow: #e5c890;
+            @green: #a6d189;
+            @teal: #81c8be;
+            @sky: #99d1db;
+            @sapphire: #85c1dc;
+            @blue: #8caaee;
+            @lavender: #babbf1;
+            @text: #c6d0f5;
+            @subtext1: #b5bfe2;
+            @subtext0: #a5adce;
+            @overlay2: #949cbb;
+            @overlay1: #838ba7;
+            @overlay0: #737994;
+            @surface2: #626880;
+            @surface1: #51576d;
+            @surface0: #414559;
+            @base: #303446;
+            @mantle: #292c3c;
+            @crust: #232634;
+        }
+        ;
+        @macchiato: {
+            @rosewater: #f4dbd6;
+            @flamingo: #f0c6c6;
+            @pink: #f5bde6;
+            @mauve: #c6a0f6;
+            @red: #ed8796;
+            @maroon: #ee99a0;
+            @peach: #f5a97f;
+            @yellow: #eed49f;
+            @green: #a6da95;
+            @teal: #8bd5ca;
+            @sky: #91d7e3;
+            @sapphire: #7dc4e4;
+            @blue: #8aadf4;
+            @lavender: #b7bdf8;
+            @text: #cad3f5;
+            @subtext1: #b8c0e0;
+            @subtext0: #a5adcb;
+            @overlay2: #939ab7;
+            @overlay1: #8087a2;
+            @overlay0: #6e738d;
+            @surface2: #5b6078;
+            @surface1: #494d64;
+            @surface0: #363a4f;
+            @base: #24273a;
+            @mantle: #1e2030;
+            @crust: #181926;
+        }
+        ;
+        @mocha: {
+            @rosewater: #f5e0dc;
+            @flamingo: #f2cdcd;
+            @pink: #f5c2e7;
+            @mauve: #cba6f7;
+            @red: #f38ba8;
+            @maroon: #eba0ac;
+            @peach: #fab387;
+            @yellow: #f9e2af;
+            @green: #a6e3a1;
+            @teal: #94e2d5;
+            @sky: #89dceb;
+            @sapphire: #74c7ec;
+            @blue: #89b4fa;
+            @lavender: #b4befe;
+            @text: #cdd6f4;
+            @subtext1: #bac2de;
+            @subtext0: #a6adc8;
+            @overlay2: #9399b2;
+            @overlay1: #7f849c;
+            @overlay0: #6c7086;
+            @surface2: #585b70;
+            @surface1: #45475a;
+            @surface0: #313244;
+            @base: #1e1e2e;
+            @mantle: #181825;
+            @crust: #11111b;
+        }
+        ;
+    }
 
-  #catppuccin(@lookup, @accent) {
-      @rosewater: @catppuccin[@@lookup][@rosewater];
-      @flamingo: @catppuccin[@@lookup][@flamingo];
-      @pink: @catppuccin[@@lookup][@pink];
-      @mauve: @catppuccin[@@lookup][@mauve];
-      @red: @catppuccin[@@lookup][@red];
-      @maroon: @catppuccin[@@lookup][@maroon];
-      @peach: @catppuccin[@@lookup][@peach];
-      @yellow: @catppuccin[@@lookup][@yellow];
-      @green: @catppuccin[@@lookup][@green];
-      @teal: @catppuccin[@@lookup][@teal];
-      @sky: @catppuccin[@@lookup][@sky];
-      @sapphire: @catppuccin[@@lookup][@sapphire];
-      @blue: @catppuccin[@@lookup][@blue];
-      @lavender: @catppuccin[@@lookup][@lavender];
-      @text: @catppuccin[@@lookup][@text];
-      @subtext1: @catppuccin[@@lookup][@subtext1];
-      @subtext0: @catppuccin[@@lookup][@subtext0];
-      @overlay2: @catppuccin[@@lookup][@overlay2];
-      @overlay1: @catppuccin[@@lookup][@overlay1];
-      @overlay0: @catppuccin[@@lookup][@overlay0];
-      @surface2: @catppuccin[@@lookup][@surface2];
-      @surface1: @catppuccin[@@lookup][@surface1];
-      @surface0: @catppuccin[@@lookup][@surface0];
-      @base: @catppuccin[@@lookup][@base];
-      @mantle: @catppuccin[@@lookup][@mantle];
-      @crust: @catppuccin[@@lookup][@crust];
-      @accent-color: @catppuccin[@@lookup][@@accent];
+    #catppuccin(@lookup,
+    @accent) {
+        @rosewater: @catppuccin[@@lookup][@rosewater];
+        @flamingo: @catppuccin[@@lookup][@flamingo];
+        @pink: @catppuccin[@@lookup][@pink];
+        @mauve: @catppuccin[@@lookup][@mauve];
+        @red: @catppuccin[@@lookup][@red];
+        @maroon: @catppuccin[@@lookup][@maroon];
+        @peach: @catppuccin[@@lookup][@peach];
+        @yellow: @catppuccin[@@lookup][@yellow];
+        @green: @catppuccin[@@lookup][@green];
+        @teal: @catppuccin[@@lookup][@teal];
+        @sky: @catppuccin[@@lookup][@sky];
+        @sapphire: @catppuccin[@@lookup][@sapphire];
+        @blue: @catppuccin[@@lookup][@blue];
+        @lavender: @catppuccin[@@lookup][@lavender];
+        @text: @catppuccin[@@lookup][@text];
+        @subtext1: @catppuccin[@@lookup][@subtext1];
+        @subtext0: @catppuccin[@@lookup][@subtext0];
+        @overlay2: @catppuccin[@@lookup][@overlay2];
+        @overlay1: @catppuccin[@@lookup][@overlay1];
+        @overlay0: @catppuccin[@@lookup][@overlay0];
+        @surface2: @catppuccin[@@lookup][@surface2];
+        @surface1: @catppuccin[@@lookup][@surface1];
+        @surface0: @catppuccin[@@lookup][@surface0];
+        @base: @catppuccin[@@lookup][@base];
+        @mantle: @catppuccin[@@lookup][@mantle];
+        @crust: @catppuccin[@@lookup][@crust];
+        @accent-color: @catppuccin[@@lookup][@@accent];
 
-      a,
-      .page-title, .ig-list .ig-row a.ig-title,
-      .ellipsible {
-          color: @text
-      }
-      
-      a:link, a:visited,
-      .css-10am28f-text,
-      .css-1v7gzzc-text,
-      .css-1hilv69-text
-      {
-          color: @accent-color;
-          text-decoration-color: @blue;
-      }
-      
-      .css-wdjw8c-avatar__initials,
-      .css-m7dc0-view--inlineBlock-avatar,
-      .css-152kj4z-checkboxFacade__facade{
-          color: @accent-color;
-          background-color: @mantle;
-          border-color: @surface2;
-      }
-      
-      .css-1mtgjqq-textInput:is(input)[type]::placeholder {
-          color: @text;
-          opacity: 1
-      }
-      
-      .icon-check {
-          color: @green !important
-      }
-      
-      .list-view a.active {
-          color: @text !important;
-          border-left-color: @text !important;
-      }
-      
-      .css-tpuo6v-text,
-      .css-1vfp3rz-text,
-      .css-qbjizl-text{
-          color: @overlay2
-      }
-      
-      .css-1xf7txc-baseButton__content,
-      .css-10mk03b-baseButton__content,
-      .css-152kj4z-checkboxFacade__facade,
-      .css-1vfp3rz-text,
-      .ui-button btn-view{
-          background: 0;
-          opacity: 1;
-          border-color: #FFF;
-          color: #FFF
-      }
-      
-      #breadcrumbs,
-      #printQuizButton,
-      #content,
-      .navigation-tray-container,
-      .ic-Dashboard-header__layout,
-      .button-sidebar-wide,
-      .access_tokens,
-      .context_modules,
-      .textarea-container,
-      .Button,
-      .panel,
-      body {
-         background-color: @base;
-         color: @accent-color
-      }
-      
-      #application,
-      .comments,
-      .module-sequence-footer-content,
-      .immersive_reader_mount_point,
-      .context_modules,
-      .css-f88gdg-baseButton__content{
-          background: @base !important;
-          background-color: @base !important;
-          color: @accent-color !important;
-      }
+        body,
+        select,
+        strong,
+        #breadcrumbs,
+        .ic-app-header__menu-list-item.ic-app-header__menu-list-item--active .ic-app-header__menu-list-link,
+        .ic-Dashboard-header__layout,
+        .ic-DashboardCard__header_content,
+        .ic-DashboardCard,
+        .css-1gto5tw-tray,
+        .header-bar,
+        .context_module,
+        .ig-row,
+        .item-group-container,
+        .pinned-discussions-v2__wrapper,
+        .unpinned-discussions-v2__wrapper,
+        .ic-item-row,
+        .css-kkyiqt-textInput__facade,
+        .css-dib9xp-textInput__facade,
+        .css-1rpus1y-baseButton__content,
+        .Button,
+        .btn,
+        .ui-button,
+        .css-1bs1z4i-view-tabs__container,
+        .css-19b53hb-view-tab,
+        .ColorPicker__Container,
+        .DashboardCardMenu__ColorPicker,
+        .css-dvua1q-view--block-contextView__content,
+        .css-j68kdy-formFieldLabel,
+        .css-1jq357a-view-tab,
+        .css-1dndbkc-menu,
+        .css-xkdrr-menuItem,
+        .css-oqi6mv-menuItem__label,
+        .css-1cnxpbl-view-panel__content,
+        .headerBar,
+        .discussion-reply-box,
+        .tox,
+        .tox-tbtn,
+        .tox .tox-tbtn:active,
+        .tox .tox-tbtn:focus,
+        .tox-menubar,
+        .tox-mbtn,
+        #right-side .details .header,
+        .tox-toolbar__primary,
+        .tox .tox-split-button .tox-tbtn.tox-split-button__chevron,
+        .css-zf1rec-view--flex-flex,
+        .tox .tox-toolbar-overlord .tox-toolbar__overflow,
+        .tox-collection__group,
+        .tox .tox-collection__item,
+        .tox .tox-menu,
+        .discussions-v2__container-image,
+        .closed-for-comments-discussions-v2__wrapper,
+        .tox-selected-menu .tox-insert-table-picker,
+        .tox .tox-insert-table-picker__label,
+        .ic-Table.ic-Table--striped tbody tr:nth-child(2n + 1),
+        .ic-Table.ic-Table--hover-row tbody tr:hover,
+        .css-10f5v0f-pill,
+        .pages.show .page-title,
+        .fc-toolbar,
+        .fc-view-container,
+        .css-14chmi2-modal,
+        .css-1y7d45o-modalHeader,
+        .css-vxe90h-view--inlineBlock,
+        .css-pysk6l-modalFooter,
+        #calendar-list-holder,
+        #other-calendars-list-holder,
+        #undated-events #calendar-app .fc-event,
+        #calendar-drag-and-drop-container .fc-event,
+        #minical,
+        [data-testid="ShowOnFocusButton__wrapper"],
+        #calendar-app .fc-agendaWeek-view .fc-body,
+        #calendar-drag-and-drop-container .fc-agendaWeek-view .fc-body,
+        #calendar-app .fc-agendaWeek-view .fc-event,
+        #calendar-drag-and-drop-container .fc-agendaWeek-view .fc-event,
+        .fc-bg,
+        #calendar-app .fc-event,
+        #calendar-drag-and-drop-container .fc-event,
+        #event-details-trap-focus,
+        .css-odml9l-view--inlineBlock-baseButton,
+        .css-1fpmfut-view-tag,
+        .css-1mtgjqq-textInput,
+        .css-10mk03b-baseButton__content,
+        .css-152kj4z-checkboxFacade__facade,
+        table.summary td,
+        table.summary tbody th,
+        #syllabus tr.date.date_passed td,
+        #syllabus tr.date.date_passed th,
+        .al-options,
+        select.ic-Input,
+        textarea.ic-Input,
+        input[type="text"].ic-Input,
+        input[type="password"].ic-Input,
+        input[type="datetime"].ic-Input,
+        input[type="datetime-local"].ic-Input,
+        input[type="date"].ic-Input,
+        input[type="month"].ic-Input,
+        input[type="time"].ic-Input,
+        input[type="week"].ic-Input,
+        input[type="number"].ic-Input,
+        input[type="email"].ic-Input,
+        input[type="url"].ic-Input,
+        input[type="search"].ic-Input,
+        input[type="tel"].ic-Input,
+        input[type="color"].ic-Input,
+        .uneditable-input.ic-Input,
+        .standalone-icon::before,
+        .comment_list,
+        .comments,
+        .agenda-container,
+        .item-group-expandable .emptyMessage,
+        .ic-Login-confirmation__content,
+        .css-1jxucsm-pill,
+        .file-upload-submission,
+        .edit_calendar_event_form_holder,
+        .ui-tabs,
+        .ui-tabs-panel,
+        .ui-dialog .ui-dialog-titlebar.ui-widget-header,
+        .ui-dialog .ui-datepicker .ui-widget-header.ui-datepicker-header,
+        .ui-datepicker .ui-dialog .ui-widget-header.ui-datepicker-header,
+        textarea,
+        input[type="text"],
+        input[type="password"],
+        input[type="datetime"],
+        input[type="datetime-local"],
+        input[type="date"],
+        input[type="month"],
+        input[type="time"],
+        input[type="week"],
+        input[type="number"],
+        input[type="email"],
+        input[type="url"],
+        input[type="search"],
+        input[type="tel"],
+        input[type="color"],
+        .uneditable-input,
+        .ui-tabs .ui-tabs-nav li.ui-tabs-active,
+        .ui-tabs .ui-tabs-nav li.ui-tabs-active.ui-state-hover,
+        .ui-tabs .ui-tabs-nav li.ui-tabs-active:hover,
+        .ui-tabs .ui-tabs-nav li.ui-state-hover,
+        .ui-tabs .ui-tabs-nav li:hover,
+        .css-pcp0di-colHeader,
+        .css-ppw98w-view-cell,
+        .css-1qtwbmq-toggleDetails__toggle,
+        .css-rfsolq-view-panel__content,
+        #token_details_dialog,
+        .ui-dialog-content .ui-widget-content,
+        .css-f88gdg-baseButton__content,
+        a.delete_key_link,
+        .css-1cfxmvg-modalHeader,
+        .css-1xfsrge-view--block-modalBody,
+        .css-qfe6jw,
+        .css-191x3ky-view--flex-flex,
+        .css-1axera6-view--inlineBlock-baseButton,
+        .css-13p5152-baseButton__content,
+        .css-10pjcy4-view-flexItem,
+        .css-li6ugh-view-flexItem,
+        {
+            background: @base;
+            color: @text !important;
+        }
 
-      *:not(a, svg, span, 
-          .ic-DashboardCard__header_hero, 
-          .ic-DashboardCard__action-layout,
-          .menu-item-icon-container,
-          .ic-app-header__main-navigation,
-          .ic-app-header__logomark-container,
-          .icon-check
-      ), .hidden-phone {
-          color: @text !important;
-          background-color: @base !important;
-      }
-      
-      #header, .ic-app-header__logomark-container {
-         background-color: @mantle !important;
-      }
+        .ig-row:hover,
+        .css-1hb7i4d-view--inlineBlock-baseButton:hover > [class$="-baseButton__content"],
+        .course-list-table-row:hover,
+        .Button:hover,
+        .btn:hover,
+        .ui-button:hover,
+        .tox .tox-mbtn:hover:not(:disabled):not(.tox-mbtn--active),
+        .tox-mbtn:hover,
+        .tox-mbtn:active,
+        .tox:not(.tox-tinymce-inline) .tox-editor-header,
+        .tox .tox-tbtn:hover,
+        .tox .tox-swatches__picker-btn:hover,
+        .css-6dqntv-view--inlineBlock-baseButton:hover > [class$="-baseButton__content"],
+        .css-xkdrr-menuItem:hover,
+        #calendar-app .fc-month-view .fc-today,
+        #calendar-drag-and-drop-container .fc-month-view .fc-today,
+        #calendars-context-list .context_list_context:hover,
+        #other-calendars-context-list .context_list_context:hover,
+        .css-16oqx2e-view,
+        .css-10mk03b-baseButton__content:hover,
+        .css-1q0rd74-view--inlineBlock-baseButton:hover > [class$="-baseButton__content"],
+        .mini-cal-month-and-year,
+        .mini_calendar .day:not(.other_month,
+        .today,
+        .has_event),
+        .ef-item-row:hover,
+        .ig-header,
+        .accessible-toggler,
+        .agenda-day.agenda-today,
+        .css-1hb7i4d-view--inlineBlock-baseButton:active > [class$="-baseButton__content"],
+        .tox .tox-collection--list .tox-collection__item--active:not(.tox-collection__item--state-disabled),
+        .css-1jq357a-view-tab:hover,
+        .tox .tox-mbtn:hover:not(:disabled),
+        .css-1axera6-view--inlineBlock-baseButton:hover > [class$="-baseButton__content"],
+        {
+            background: @mantle;
+            color: @text
+        }
 
-      .ic-app-header__menu-list-item 
-      .ic-app-header__menu-list-link {
-         background-color: @mantle;
-      }
-      
-      
-      
-      .ic-app-header__menu-list-item.ic-app-header__menu-list-item--active .ic-app-header__menu-list-link {
-        background: @base;
-      }
+        .ic-unread-badge {
+            background: @text
+        }
 
-      .ic-DashboardCard {
-          box-shadow: 0 2px 6px rgba(0, 0, 0, .4)
-      }
-      
-      #right-side .events_list .event-details::after,
-      #right-side .events_list .todo-details::after,
-      #right-side .to-do-list .event-details::after,
-      #right-side .to-do-list .todo-details::after {
-          content: "";
-          position: absolute;
-          top: 0;
-          right: 0;
-          height: 100%;
-          width: 12px;
-          background: linear-gradient( to right,
-          rgba(255, 255, 255, 0) 0%,
-          @base 80%);
-      }
+        .css-2bn4c9-view--inlineBlock-inlineListItem,
+        .css-1onamjj-view-listItem,
+        #right-side .right-side-list li p,
+        .css-5udsuu-baseButton__iconOnly,
+        .name,
+        .css-vqv1g6-toggleDetails__toggle,
+        .css-vqv1g6-toggleDetails__toggle:focus,
+        .css-vqv1g6-toggleDetails__toggle:hover,
+        .css-vqv1g6-toggleDetails__toggle:active,
+        .css-15k3f08-text,
+        .css-1wo9s98-text,
+        .css-1mtgjqq-textInput:is(input)[type],
+        .css-1mtgjqq-textInput:is(input)[type]::placeholder,
+        .css-ym0dg8-textInput:is(input)[type],
+        .css-ym0dg8-textInput:is(input)[type]::placeholder,
+        .css-1mtgjqq-textInput:is(input)[type]::placeholder,
+        .fc-icon-left-single-arrow::after,
+        #minical .fc-toolbar h2,
+        #minical .fc-toolbar .h2,
+        #minical .fc-toolbar .fc-button .fc-icon::after,
+        #minical td.fc-day-number:not(.fc-other-month,
+        .fc-today),
+        .css-84gyo1-view-link:is(a),
+        .css-84gyo1-view-link:is(button),
+        .css-1l8k4me-radioInput__label,
+        #edit_event .ui-tabs .ui-tabs-nav li.ui-state-hover a,
+        #edit_event .ui-tabs .ui-tabs-nav li:hover a {
+            color: @text;
+            text-shadow: 0 0;
+        }
 
-      :root {
-          --ic-brand-global-nav-avatar-border: @accent-color;
-          --ic-brand-font-color-dark: fadeout(@accent-color, 0.8);
-          --ic-brand-primary: @accent-color;
-          --ic-brand-global-nav-ic-icon-svg-fill: fadeout(@accent-color, 0.5);
-          --eMdva-color: @base !important;
-      }
-      .unread_count,
-      .menu-item-icon-container,
-      .nav-badge,
-      .css-j68kdy-formFieldLabel,
-      .assignment_sort_order_select_menu,
-      .name{
-          color: @text;
-          text-shadow: 0px 0px;
-      }
-      
-      .menu-item__badge, .ic-app-header__menu-list-item.ic-app-header__menu-list-item--active .menu-item__badge{
-          background-color: @accent-color;
-          color: @surface1;
-      }
-      
-      .ic-app-header__menu-list-item.ic-app-header__menu-list-item--active .ic-icon-svg {
-          fill: @accent-color;
-      }
-      
-      .list-view a.active {
-          border-left-color: #007fff;
-          color: #007fff;
-      } // Fix file preview
-      nav.ViewerControls * {
-          background-color: @surface1 !important;
-      }
-      div.Pages,
-      .Page-container {
-          background-color: #f2f2f2 !important;
-      }
-      .Page-container * {
-          background-color: transparent !important;
-      }
-      
-      .css-svglmx-toggleFacade__facade,
-      .css-1pkpuv1-toggleFacade__facade {
-          background: @overlay1
-      }
-      
-      .css-htn7vy-toggleFacade__facade,
-      .css-htn7vy-toggleFacade__facade {
-          background: @green;
-      }
-      
-      #calendar-app .fc-event, #calendar-drag-and-drop-container .fc-event         {
-          padding: 1px;
-      }
-      
-      #minical .fc-widget-content {
-          border: 0;
-      }
-  }
+        .css-benqwi-view-link,
+        .css-benqwi-view-link:hover,
+        .css-benqwi-view-link:focus,
+        .css-4znku8-view-link,
+        .css-4znku8-view-link:hover,
+        .css-4znku8-view-link:focus,
+        .tox .tox-tbtn.tox-tbtn--enabled::after,
+        .css-wplyrq-baseButton__content,
+        .css-1hilv69-text,
+        math-field {
+            color: @accent-color;
+        }
+
+        .css-1ktvcwe-view--inlineBlock-avatar,
+        .css-wdjw8c-avatar__initials,
+        {
+            background: @mantle;
+            color: @accent-color
+        }
+
+        .css-jzme85-view--inlineBlock-baseButton::before,
+        .css-ut4w68-view--inlineBlock::before,
+        .css-odml9l-view--inlineBlock-baseButton::before,
+        .css-dib9xp-textInput__facade::before,
+        .css-1fpmfut-view-tag::before,
+        .css-1q0rd74-view--inlineBlock-baseButton::before,
+        .css-wb21cb-view--inlineBlock-baseButton::before,
+        .css-9r2ckj-view--inlineBlock-baseButton::before,
+        .css-uxw84v-radioInput__facade::before,
+        .css-1hb7i4d-view--inlineBlock-baseButton::before,
+        .css-1iuf37l-view--inlineBlock-baseButton::before,
+        .css-1r8il9n-view--inlineBlock-baseButton::before,
+        .css-1qtwbmq-toggleDetails__toggle::before,
+        .css-zedjgn-checkboxFacade__facade::before,
+        .css-1lmr0cp-checkboxFacade__facade::before,
+        .css-1nr2bfd-checkboxFacade__facade::before,
+        .css-k4bct0-toggleFacade__facade::before,
+        .css-1jq357a-view-tab::before,
+        .css-19b53hb-view-tab::before,
+        .css-1h0il5s-view--inlineBlock-baseButton::before,
+        .css-1axera6-view--inlineBlock-baseButton::before,
+        .css-6dqntv-view--inlineBlock-baseButton::before,
+        .css-vqv1g6-toggleDetails__toggle::before,
+        .css-7utyer-view--inlineBlock-baseButton::before,
+        .css-18f7mzf-checkboxFacade__facade::before,
+        .css-1jxucsm-pill,
+        .css-wgj13i-textArea__outline,
+        {
+            border-color: @accent-color
+        }
+
+        .css-benqwi-view-link:is(a):focus,
+        .css-benqwi-view-link:is(button):focus {
+            outline-color: @accent-color
+        }
+
+        .tox .tox-mbtn:focus:not(:disabled),
+        .tox .tox-tbtn:focus,
+        .tox .tox-split-button:focus {
+            box-shadow: 0 0 0 2px @accent-color
+        }
+
+        .tox .tox-insert-table-picker .tox-insert-table-picker__selected,
+        {
+            border-color: @crust
+        }
+
+        .css-tpuo6v-text,
+        .css-1sr6v3o-text,
+        .css-zlfjpm-text,
+        .event-details-timestring,
+        .screenreader-only,
+        #calendar-list-holder .accounts-empty-state,
+        #other-calendars-list-holder .accounts-empty-state,
+        #undated-events .accounts-empty-state,
+        .discussion-fyi,
+        .css-gyi6rc-toggleDetails__details,
+        .css-1ek001j-checkboxFacade__label,
+        .css-1aihtnt-toggleFacade__label,
+        .tox .tox-collection__item-accessory,
+        ._1g1ys1h {
+            color: @subtext1 !important;
+        }
+
+        .css-vl75cv-baseButton__content,
+        .css-vl75cv-baseButton__content:hover,
+        .ic-unread-badge__unread-count,
+        .unread_count,
+        .css-9fgfkj-view--inlineBlock-badge,
+        .tox .tox-insert-table-picker .tox-insert-table-picker__selected,
+        #minical .fc-state-highlight,
+        .mini_calendar .day.today,
+        .css-jfcg4h-view--inlineBlock-badge,
+        .css-1h0il5s-view--inlineBlock-baseButton:hover > [class$="-baseButton__content"],
+        .css-1h0il5s-view--inlineBlock-baseButton:active > [class$="-baseButton__content"],
+        .nav-badge,
+        .ui-menu a.ui-state-focus,
+        .css-7c2g3n-baseButton__content,
+        #grades_summary .unread_dot,
+        .css-1h0il5s-view--inlineBlock-baseButton,
+        .css-17i83m2-baseButton__content,
+        .css-1jos3kl-baseButton__content,
+        .list-view a.active .nav-badge,
+        {
+            background: @accent-color;
+            color: @surface0;
+            border: none;
+            fill: @surface0
+        }
+
+        .ic-unread-badge__total-count,
+        .mini_calendar .day.has_event:not(.today),
+        .group_user_332489,
+        .group_user_332489:hover,
+        .group_user_332489:focus {
+            background: @surface0;
+            color: @subtext1;
+            border: none;
+        }
+
+
+        a.active {
+            border-left: 2px solid @text;
+            color: @text
+        }
+
+        .css-19b53hb-view-tab {
+            border-bottom: none;
+        }
+
+        .css-1cnxpbl-view-panel__content,
+        .tox .tox-menu {
+            border: none;
+        }
+
+        .ui-widget-overlay,
+        .css-ro5rzy-mask {
+            background: rgba(@surface1, 0.75);
+        }
+
+        g,
+        path {
+            //fill: @text
+        }
+        path[d="M960 1807.059c-467.125 0-847.059-379.934-847.059-847.059 0-467.125 379.934-847.059 847.059-847.059 467.125 0 847.059 379.934 847.059 847.059 0 467.125-379.934 847.059-847.059 847.059M960 0C430.645 0 0 430.645 0 960s430.645 960 960 960 960-430.645 960-960S1489.355 0 960 0"] {
+            fill: @accent-color
+        } // unread dots in conversations
+        path[d="M1306.181 1110.407c-28.461 20.781-40.32 57.261-29.477 91.03l166.136 511.398-435.05-316.122c-28.686-20.781-67.086-20.781-95.66 0l-435.05 316.122 166.25-511.623c10.842-33.544-1.017-70.024-29.591-90.805L178.577 794.285h537.825c35.351 0 66.523-22.701 77.365-56.245l166.25-511.51 166.136 511.397a81.155 81.155 0 0 0 77.365 56.358h537.939l-435.276 316.122Zm609.77-372.819c-10.956-33.656-42.014-56.244-77.365-56.244h-612.141l-189.064-582.1C1026.426 65.589 995.367 43 960.017 43c-35.351 0-66.523 22.588-77.365 56.245L693.475 681.344H81.335c-35.351 0-66.41 22.588-77.366 56.244-10.842 33.657 1.017 70.137 29.591 90.918l495.247 359.718-189.29 582.211c-10.842 33.657 1.017 70.137 29.704 90.918 14.23 10.39 31.059 15.586 47.661 15.586 16.829 0 33.657-5.195 47.887-15.699l495.248-359.718 495.02 359.718c28.575 20.894 67.088 20.894 95.775.113 28.574-20.781 40.433-57.261 29.59-91.03l-189.289-582.1 495.247-359.717c28.687-20.781 40.546-57.261 29.59-90.918Z"] {
+            fill: @text
+        } // conversations stars
+        path[d="M961 1C431.645 1 1 431.645 1 961s430.645 960 960 960 960-430.645 960-960S1490.355 1 961 1m0 1807.059c-467.125 0-847.059-379.934-847.059-847.059 0-467.125 379.934-847.059 847.059-847.059 467.125 0 847.059 379.934 847.059 847.059 0 467.125-379.934 847.059-847.059 847.059m319.465-1246.374-319.51 319.51-319.398-319.51-79.85 79.85 319.398 319.51-319.397 319.398 79.85 79.85 319.397-319.398 319.51 319.397 79.85-79.85-319.51-319.397 319.51-319.51-79.85-79.85Z"] {
+            fill: @red
+        } // x in settings
+        path[d="M860.16 1373.227 490.773 1003.84 641.6 853.013l218.56 218.56 453.653-453.653 150.827 150.827-604.48 604.48ZM960 0C429.76 0 0 429.76 0 960s429.76 960 960 960c530.133 0 960-429.76 960-960S1490.133 0 960 0Z"] {
+            fill: @green
+        } // checkmark in settings
+        path[d="m.08 568.063 176.13-176.13 783.988 783.864 783.74-783.864 176.129 176.13-959.87 960.118z"] {
+            fill: @text
+        } // dropdown symbol in settings 
+        path[d="M1585.963 1920 960.48 1544.711 335 1920V170.586C335 76.536 411.536 0 505.586 0h909.79c94.05 0 170.587 76.536 170.587 170.586V1920Z"] {
+            fill: @yellow
+        } // discussion bookmark
+        path[d="M480.286 822.857h548.571c151.269 0 274.286-123.017 274.286-274.286 0-151.268-123.017-274.285-274.286-274.285H480.286v548.571Zm0 822.857H1166c151.269 0 274.286-123.017 274.286-274.285 0-151.269-123.017-274.286-274.286-274.286H480.286v548.571ZM1166 1920H206V0h822.857c302.537 0 548.572 246.034 548.572 548.571 0 134.263-48.549 257.418-128.778 352.732 159.223 96.137 265.92 270.994 265.92 470.126 0 302.537-246.034 548.571-548.571 548.571Z"] {
+            fill: @text
+        } // bold
+        path[d="M738.077 0v147.692h348.554L680.477 1772.308H295V1920h886.302v-147.692H832.748l406.006-1624.616h385.477V0z"] {
+            fill: @text
+        } // italic
+        path[d="M1698.923 1772.308V1920H222v-147.692h1476.923ZM369.693 0v812.308c0 285.046 231.876 516.923 516.922 516.923h147.693c285.046 0 516.923-231.877 516.923-516.923V0h147.692v812.308c0 366.424-298.19 664.615-664.615 664.615H886.615c-366.424 0-664.615-298.19-664.615-664.615V0h147.692Z"] {
+            fill: @text
+        } // underline
+        path[d="M0 1920v-443.07692h1772.30769V1920z"] {
+            fill: @text
+        } // block below color
+        path[d="M736.526769.05907692h299.224611L1545.14215 1227.08677l-136.46769 56.56615-164.97231-397.587689H528.576L363.603692 1283.65292 227.136 1227.08677 736.526769.05907692zM835.332923 147.751385L589.868308 738.372923h592.541542L937.09292 147.751385H835.332923z"] {
+            fill: @text
+        } // letter in color
+        path[d="m.153 526.146 92.168-92.299 867.767 867.636 867.636-867.636 92.429 92.299-960.065 959.935z"] {
+            fill: @text
+        } // dropdown arrow
+        path[d="M74 1918.14125 1841 1918.14125 1841 1469.14125 74 1469.14125z"] {
+            fill: @text
+        } //highlight block
+        path[d="M1231.314 481.452v136.812h-547.25v1231.314H547.25V618.264H0V481.452h1231.314ZM1675.886 71c98.642 0 190.033 60.334 227.246 150.22 36.802 88.928 12.587 188.391-64.85 265.827-90.296 90.296-213.017 200.978-288.4 268.016h365.426v136.813h-478.844c-37.76 0-68.406-30.646-68.406-68.407v-59.924c0-19.7 8.619-38.58 23.532-51.578 2.189-1.915 216.437-188.117 349.966-321.646 38.581-38.582 50.758-78.941 35.161-116.838-16.007-38.718-57.461-65.67-100.83-65.67-100.148 0-183.877 108.492-184.835 109.723l-109.313-82.36C1386.801 228.47 1506.923 71 1675.886 71Z"] {
+            fill: @text
+        } // sub/superscript
+        path[d="M960 1468.235c93.448 0 169.412 75.965 169.412 169.412 0 93.448-75.964 169.412-169.412 169.412-93.448 0-169.412-75.964-169.412-169.412 0-93.447 75.964-169.412 169.412-169.412Zm0-677.647c93.448 0 169.412 75.964 169.412 169.412 0 93.448-75.964 169.412-169.412 169.412-93.448 0-169.412-75.964-169.412-169.412 0-93.448 75.964-169.412 169.412-169.412Zm0-677.647c93.448 0 169.412 75.964 169.412 169.412 0 93.447-75.964 169.412-169.412 169.412-93.448 0-169.412-75.965-169.412-169.412 0-93.448 75.964-169.412 169.412-169.412Z"] {
+            fill: @text
+        } // three dots
+        path[d="M1543.03014,312.225305 L1056.25966,861 L795,619.351719 L1335.45236,123.521776 C1343.65702,115.67377 1355.72958,114.736695 1363.23098,121.647625 L1541.15479,286.221467 C1548.53898,293.015262 1548.65619,305.19724 1543.03014,312.225305 L1543.03014,312.225305 Z M898.711011,994.448142 C836.706813,972.459128 767.201162,989.769628 721.489183,1038.89402 L701.094608,1061 L616,982.517932 L636.628996,960.294992 C681.989345,911.287561 694.179206,840.758966 667.220859,780.757027 C659.250565,762.627787 664.056183,740.638772 678.355828,726.95412 L708.830481,699 L979,948.481745 L952.393284,978.190307 C939.148531,994.565105 917.699064,1000.76414 898.711011,994.448142 L898.711011,994.448142 Z M598.157143,1171.267 L416,1171.618 L532.908571,1065.382 L621,1146.931 L598.157143,1171.267 Z M1620.96383,200.201811 L1443.1176,35.7209178 C1390.27923,-13.0965429 1307.56551,-11.4575874 1255.6644,38.0622828 L598.40662,641.080844 C547.442781,689.781237 532.212208,764.939054 560.330188,828.15591 C567.945475,845.013738 564.079252,866.203091 550.606054,880.602486 L492.261245,943.819342 L304.690887,1114.38778 C276.104274,1140.494 265.208557,1179.82894 276.221432,1216.8225 C287.234308,1253.93314 317.929769,1280.85884 365.37886,1287.6488 L649.136142,1288 L707.246634,1226.18796 L707.480951,1226.4221 L743.448533,1187.55544 L747.080439,1183.69219 L807.534096,1118.25104 C821.35877,1103.50044 842.09578,1098.23236 859.200884,1104.43698 C924.45803,1127.73356 998.267727,1106.77835 1041.49912,1053.98057 L1632.44533,387.979285 C1678.60569,331.43532 1673.56788,248.902203 1620.96383,200.201811 L1620.96383,200.201811 Z"] {
+            fill: @text
+        } // highlighter
+        path[d="M1866.003 351.563 1565.128 50.575c-69.46-67.652-180.932-67.426-248.923.565L906.23 461.116c-68.33 68.443-68.33 179.69.113 248.132l31.623 31.624 79.737-79.963-31.624-31.51c-24.282-24.396-24.282-64.038 0-88.433l409.977-409.977c24.508-24.395 64.828-24.17 89.675 0l299.859 299.972c24.734 25.186 24.847 65.619.564 90.014l-409.976 409.977c-24.508 24.282-64.15 24.282-88.546 0l-110.795-110.909 159.473-159.36-79.85-79.85-435.614 435.502-109.779-109.779c-32.866-33.656-76.8-52.292-123.67-52.63-43.596 1.694-92.273 18.296-126.156 52.178L51.377 1316.081c-68.442 68.442-68.442 179.69 0 248.132l301.553 301.553c34.108 34.108 79.059 51.275 124.01 51.275 44.95 0 89.9-17.167 124.122-51.275l409.976-409.977c33.77-33.882 52.405-78.607 52.066-126.042-.226-46.984-18.974-90.918-52.066-123.219l-30.494-30.494-79.85 79.85 30.946 30.945c11.86 11.633 18.41 27.106 18.523 43.595.113 16.942-6.664 33.092-18.974 45.516l-409.977 409.976c-23.492 23.492-64.94 23.492-88.433 0l-301.553-301.553c-11.746-11.746-18.183-27.444-18.183-44.273 0-16.715 6.437-32.414 18.183-44.16l409.977-409.976c12.197-12.31 28.235-19.087 45.063-19.087h.452c16.49.113 31.962 6.663 43.934 19.087l110.344 110.23-162.184 162.297 79.85 79.85 438.324-438.438 110.796 110.908c34.334 34.221 79.171 51.275 124.122 51.275 44.95 0 89.901-17.054 124.122-51.275l409.977-409.977c67.877-67.99 67.99-179.463 0-249.26"] {
+            fill: @text
+        } // link
+        path[d="M1920 113v1694.118H0V113h1920Zm-112.941 112.941H112.94V1694.29h1694.12V225.941ZM935.944 1058.77c182.851-258.409 332.498-286.87 426.691-264.847 160.716 37.384 272.076 242.26 330.805 608.98l10.504 65.392H207.924l20.104-71.718c85.384-306.07 172.913-457.072 283.37-489.712 102.55-30.156 185.336 43.82 258.86 109.1 43.596 38.514 90.806 81.092 122.542 78.834 15.925-1.807 32.188-20.556 43.144-36.029Zm401.167-154.842c-83.012-19.313-196.066 60.762-308.895 220.01-35.237 49.807-76.348 77.816-122.315 83.124-76.226 9.024-138.182-42.827-198.812-96.266l-3.868-3.413c-2.578-2.276-5.154-4.552-7.73-6.824-54.211-48.113-110.682-97.017-152.018-85.384-34.447 10.165-102.325 69.12-185.788 340.179h1212.762c-50.485-265.186-134.4-428.386-233.336-451.426ZM677.647 338.882c124.574 0 225.882 101.309 225.882 225.883 0 124.574-101.308 225.882-225.882 225.882S451.765 689.34 451.765 564.765s101.308-225.883 225.882-225.883Zm0 112.942c-62.343 0-112.941 50.71-112.941 112.94 0 62.231 50.598 112.942 112.941 112.942 62.344 0 112.941-50.71 112.941-112.941 0-62.23-50.597-112.941-112.94-112.941Z"] {
+            fill: @text
+        } // image
+        path[d="M101.002 1230.637V377.955c557.71-147.638 1076.312-35.47 1214.45 0v395.924l101.053-30.316V302.165l-35.671-11.014c-26.274-8.287-651.588-197.154-1349.154 1.313L-.05 305.197v1001.23l35.671 10.913c17.28 5.457 295.781 89.533 682.206 89.533 122.173 0 255.866-10.004 394.712-31.933v-101.255c-476.362 77.811-890.476-12.025-1011.537-43.048M1919.91 789.31v693.524c-.101 103.074-82.257 186.846-183.31 186.846-91.856 0-167.343-69.524-180.58-159.46-1.415-9.095-2.729-18.19-2.729-27.689 0-103.074 82.156-187.048 183.31-187.048 16.673 0 32.539 2.93 47.899 7.275 12.025 3.234 23.545 7.882 34.357 13.541V924.62l-39.814 11.824-362.577 107.317-27.89 8.186v579.94c0 2.83-.708 5.458-.81 8.186-4.243 99.234-84.176 178.964-182.601 178.964-101.154 0-183.31-83.975-183.31-187.15 0-68.513 36.682-128.033 90.645-160.572 27.385-16.471 58.711-26.577 92.665-26.577 29.81 0 57.499 7.983 82.358 20.817V976.46l27.89-8.185 101.053-29.911 360.96-106.813 142.484-42.24ZM527.515 480.635l560.842 329.835-560.842 329.735v-659.57Zm101.053 176.64v306.29L888.98 810.47 628.568 657.275ZM1736.6 1568.628c-38.097 0-68.817-27.689-78.114-64.674-1.82-6.973-4.143-13.743-4.143-21.423 0-47.394 36.884-85.996 82.257-85.996 18.896 0 35.671 7.781 49.515 19.1 19.504 15.763 32.741 39.309 32.741 66.896 0 47.495-36.884 86.097-82.256 86.097Zm-531.436 149.356c-45.373 0-82.257-38.603-82.257-86.097 0-47.495 36.884-86.097 82.257-86.097 45.372 0 82.358 38.602 82.358 86.097 0 47.494-36.986 86.097-82.358 86.097Z"] {
+            fill: @text
+        } // discussion
+        path[d="M1706.235 1807.059H350.941V112.94h903.53v451.765h451.764v1242.353Zm-338.823-1670.74 315.443 315.447h-315.443V136.32Zm402.182 242.487L1440.372 49.58C1408.296 17.62 1365.717 0 1320.542 0H238v1920h1581.175V498.635c0-45.176-17.618-87.755-49.58-119.83ZM576.823 1242.353h790.589v-112.94H576.823v112.94Zm0-451.765h903.53V677.647h-903.53v112.941Zm0 677.647h451.765v-112.941H576.823v112.941Zm0-451.764h677.648V903.53H576.823v112.941Zm0-451.765h451.765V451.765H576.823v112.941Z"] {
+            fill: @text
+        } // document
+        path[d="M1581.235 734.118c0 217.976-177.317 395.294-395.294 395.294H960.06c-217.977 0-395.294-177.318-395.294-395.294V564.706h1016.47v169.412Zm225.883-282.353h-338.824V0h-112.941v451.765H790.647V0H677.706v451.765H338.882v112.94h112.942v169.413c0 280.207 228.028 508.235 508.235 508.235h56.47v395.294c0 93.402-76.009 169.412-169.411 169.412-93.403 0-169.412-76.01-169.412-169.412 0-155.633-126.72-282.353-282.353-282.353S113 1482.014 113 1637.647V1920h112.941v-282.353c0-93.402 76.01-169.412 169.412-169.412s169.412 76.01 169.412 169.412c0 155.633 126.72 282.353 282.353 282.353 155.746 0 282.353-126.72 282.353-282.353v-395.294h56.47c280.207 0 508.235-228.028 508.235-508.235V564.706h112.942V451.765Z"] {
+            fill: @text
+        } // plug
+        path[d="M1664 1664v128H0v-128h1664Zm256-384v128H0v-128h1920Zm-256-384v128H0V896h1664Zm256-384v128H0V512h1920Zm-256-384v128H0V128h1664Z"] {
+            fill: @text
+        } // align
+        path[d="M169.412 1355.412c93.402 0 169.412 76.01 169.412 169.412s-76.01 169.411-169.412 169.411C76.009 1694.235 0 1618.225 0 1524.824c0-93.403 76.01-169.412 169.412-169.412ZM1920 1468.352v112.942H564.706v-112.941H1920ZM169.412 790.707c93.402 0 169.412 76.01 169.412 169.412s-76.01 169.411-169.412 169.411C76.009 1129.53 0 1053.52 0 960.118c0-93.403 76.01-169.412 169.412-169.412ZM1920 903.647v112.941H564.706v-112.94H1920ZM169.412 226c93.402 0 169.412 76.01 169.412 169.412s-76.01 169.412-169.412 169.412C76.009 564.824 0 488.814 0 395.412 0 302.009 76.01 226 169.412 226ZM1920 338.941v112.941H564.706v-112.94H1920Z"] {
+            fill: @text
+        } // bullet points
+        path[d="M1920 1482.42v120H0v-120h1920Zm0-360v120H0v-120h1920Zm0-360v120H840v-120h1080ZM462.456 300.048l282.48 282.48-282.48 282.36-84.84-84.84 137.52-137.64H-.024v-120h515.16l-137.52-137.64 84.84-84.72ZM1920 402.42v120H840v-120h1080Z"] {
+            fill: @text
+        } // indent
+        path[d="M1235.141 1619.922h-190.317l-179.997-179.998 635.15-635.149 275.155 275.155-539.99 539.992Zm667.31-582.472-359.995-359.994c-23.52-23.399-61.44-23.399-84.839 0l-719.989 719.99c-23.519 23.52-23.519 61.438 0 84.957l137.518 137.52H0v119.997h1259.98c15.96 0 31.2-6.36 42.48-17.52l599.99-599.99c23.4-23.52 23.4-61.44 0-84.96Z"] {
+            fill: @text
+        } // clear formatting
+        path[d="M120.034 180.004v119.999h494.993L243.392 1360.066l113.158 39.72L742.105 300.003h457.912V180.004z"] {
+            fill: @text
+        } // clear formatting letter
+        path[d="M19 4a2 2 0 012 2v12a2 2 0 01-2 2H5a2 2 0 01-2-2V6c0-1.1.9-2 2-2h14zM5 14v4h6v-4H5zm14 0h-6v4h6v-4zm0-6h-6v4h6V8zM5 12h6V8H5v4z"] {
+            fill: @text
+        } // table
+        path[d="M1920 260v112.941h-871.567L558.494 1660.696l-106.503-2.371-207.247-627.276H0V918.11h285.515l53.647 38.738 170.203 515.125L956.612 296.367 1009.468 260H1920Zm-133.982 603.219 79.85 79.962-280.208 279.981 280.207 280.207-79.85 79.737-280.206-280.094-279.981 280.094-79.85-79.737 280.094-280.207-280.094-279.98 79.85-79.963 279.98 280.094 280.208-280.094Z"] {
+            fill: @text
+        } // math
+        path[d="M13.7647 5.21417C13.6694 5.21417 13.5773 5.23988 13.482 5.24631C12.8329 3.36281 11.0795 2 9 2C6.53506 2 4.52435 3.91029 4.28294 6.34234C4.09341 6.31127 3.90176 6.28556 3.70588 6.28556C1.66235 6.28556 0 7.96764 0 10.0354C0 12.1032 1.66235 13.7853 3.70588 13.7853L5 13.7853V12.7139L3.70588 12.7139C2.24682 12.7139 1.05882 11.5129 1.05882 10.0354C1.05882 8.55798 2.24682 7.35695 3.70588 7.35695C4.40259 7.35695 5.06012 7.62908 5.55882 8.12192L6.29894 7.35588C6.00565 7.0666 5.66788 6.84483 5.30894 6.66912C5.38941 4.67419 7.00835 3.07139 9 3.07139C11.0435 3.07139 12.7059 4.75347 12.7059 6.82126C12.7059 7.1491 12.6635 7.47266 12.582 7.78658L13.6059 8.06085C13.7107 7.65801 13.7647 7.24124 13.7647 6.82126C13.7647 6.64019 13.7308 6.4677 13.7118 6.29199C13.7298 6.29199 13.7467 6.28556 13.7647 6.28556C15.516 6.28556 16.9412 7.72765 16.9412 9.49973C16.9412 11.2718 15.516 12.7139 13.7647 12.7139L13 12.7139V13.7853L13.7647 13.7853C16.1005 13.7853 18 11.8632 18 9.49973C18 7.13624 16.1005 5.21417 13.7647 5.21417Z"] {
+            fill: @text
+        } // cloud
+        path[d="M7.72039 10.6479L8.3603 11.1813L6.75882 13.1025L8.36029 15.0239L7.72038 15.5573L5.6748 13.1024L7.72039 10.6479ZM10.2802 10.6479L12.3258 13.1024L10.2802 15.5573L9.64031 15.0239L11.2418 13.1025L9.6403 11.1813L10.2802 10.6479Z"] {
+            fill: @text
+        } // cloud bottom
+        // conversation select
+        div[style*="background-color: rgb(229, 242, 248);"] {
+            background-color: @mantle !important;
+        } // conversation hover 
+        div[style*="box-shadow"] {
+            box-shadow: @accent-color -4px 0px 0px inset !important;
+        }
+
+        #right-side .events_list .event-details::after,
+        #right-side .events_list .todo-details::after,
+        #right-side .to-do-list .event-details::after,
+        #right-side .to-do-list .todo-details::after,
+        .ic-DashboardCard__header-button,
+        .ic-DashboardCard__header-button:hover,
+        .ic-DashboardCard__header-button:focus,
+        .btn-link,
+        .btn-link:active,
+        .btn-link[disabled],
+        .Button--link,
+        .Button--link:active,
+        .Button--link[disabled],
+        .btn-link:hover,
+        .btn-link:active:hover,
+        .btn-link[disabled]:hover,
+        .Button--link:hover,
+        .Button--link:active:hover,
+        .Button--link[disabled]:hover,
+        .btn-link:focus,
+        .btn-link:active:focus,
+        .btn-link[disabled]:focus,
+        .Button--link:focus,
+        .Button--link:active:focus,
+        .Button--link[disabled]:focus,
+        .Button--icon-action {
+            background: transparent;
+        }
+
+        .css-1nz9urh,
+        .css-pkzi3c-view-alert {
+            border-right: 0.125rem solid @accent-color;
+            background: @accent-color;
+            border-color: @accent-color
+        } // no results found box
+        .alert-danger,
+        .alert-error {
+            background: @mantle;
+            color: @text
+        }
+
+        .course-list-favorite-course {
+            color: @peach
+        }
+
+        .css-109d2ff-formFieldMessage,
+        .css-1yqbktb-baseButton__content {
+            color: @red
+        }
+
+        .css-1u0hia0-textInput__facade,
+        .css-2fx0y3-textInput__facade,
+        .css-2fx0y3-textInput__facade::before {
+            border: 0.0625rem solid @red
+        }
+
+        .css-1jq357a-view-tab {
+            border-color: @text
+        }
+
+        .css-1nr2bfd-checkboxFacade__facade,
+        .css-zedjgn-checkboxFacade__facade,
+        .css-pmj84k-checkboxFacade__facade,
+        {
+            border-color: @text;
+            background-color: @mantle
+        }
+
+        #minical .fc-other-month,
+        .mini_calendar .other_month {
+            color: @overlay0
+        }
+
+        .tox .tox-edit-area.active,
+        .tox .tox-edit-area.active iframe {
+            border-color: @blue;
+        }
+
+
+        .ic-Form-control.ic-Form-control--checkbox input[type="checkbox"]:checked ~ .ic-Label::before {
+            background-color: @base;
+            background-position: center -1px;
+            border-color: var(--ic-brand-font-color-dark);
+        } // calculate only on graded checkbox
+        .ic-Form-control.ic-Form-control--checkbox input[type="checkbox"] ~ .ic-Label::before {
+            background-color: @base;
+        } // calculate only on graded checkbox unchecked
+        .btn.active,
+        .btn.Button--active,
+        .Button.active,
+        .active.ui-button,
+        .Button.Button--active,
+        .Button--active.ui-button,
+        .ui-button.ui-state-active:hover,
+        .ui-button.ui-state-active,
+        .ui-progressbar .ui-button.ui-widget-header {
+            background: @crust;
+            border-color: @surface0
+        } // pressed button
+        [src="https://canvas.ucdavis.edu/courses/132940/files/17735108/preview"] {
+            background: #e5e5e5;
+        }
+
+        .btn.active {
+            background: @surface0;
+            border-color: #c7cdd1
+        } // hard coded yellow highlight not sure what the other cases are
+        span[style="background-color: #fbeeb8;"] {
+            color: @surface1
+        }
+    }
 }
 // vim:ft=less
+/** 
+todo: 
+- svg's
+- loading circle
+- dropdowns in grades
+**/
