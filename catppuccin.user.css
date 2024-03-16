@@ -1,16 +1,17 @@
 /* ==UserStyle==
 @name Catppuccin for UC Davis Canvas
-@version 0.0.2
+@version 0.0.3
 @namespace github.com/PuffyDucks/davis-canvas-dark-mode/
 @homepageURL https://github.com/PuffyDucks/davis-canvas-dark-mode
 @description Canvas dark mode implementation for UC Davis students using Catppuccin
 @author PuffyDucks
-@license MIT
+@license MITt
 @preprocessor less
 @var select flavor "Flavor" ["latte:Latte", "frappe:Frappé", "macchiato:Macchiato", "mocha:Mocha*"]
 @var select accentColor "Accent" ["rosewater:Rosewater", "flamingo:Flamingo", "pink:Pink", "mauve:Mauve", "red:Red", "maroon:Maroon", "peach:Peach", "yellow:Yellow", "green:Green", "teal:Teal", "blue:Blue", "sapphire:Sapphire*", "sky:Sky", "lavender:Lavender", "subtext0:Gray"]
 ==/UserStyle== */
-@-moz-document url-prefix("https://canvas.ucdavis.edu/") {
+@-moz-document url-prefix("https://canvas.ucdavis.edu/"),
+url-prefix("https://cas.ucdavis.edu/cas/logout") {
     :root {
         #catppuccin(@flavor, @accentColor);
         --ic-brand-primary-darkened-5: #00ACD7;
@@ -251,7 +252,6 @@
         .css-1jq357a-view-tab,
         .css-1dndbkc-menu,
         .css-xkdrr-menuItem,
-        .css-oqi6mv-menuItem__label,
         .css-1cnxpbl-view-panel__content,
         .headerBar,
         .discussion-reply-box,
@@ -324,7 +324,6 @@
         input[type="tel"].ic-Input,
         input[type="color"].ic-Input,
         .uneditable-input.ic-Input,
-        .standalone-icon::before,
         .comment_list,
         .comments,
         .agenda-container,
@@ -375,13 +374,33 @@
         .css-13p5152-baseButton__content,
         .css-10pjcy4-view-flexItem,
         .css-li6ugh-view-flexItem,
-        {
-            background: @base;
+        .discussion_entry,
+        #grades_summary a.toggle_comments_link,
+        #grades_summary a.toggle_rubric_assessments_link,
+        .css-1eudkvh-view--block-modalBody,
+        .header__branding,
+        .course-title,
+        .ef-file-preview-button,
+        .mini_calendar .day:not(.other_month,
+        .today,
+        .has_event),
+        #header h1,
+        #msg.success,
+        #footer,
+        .css-1ktha4a-view-panel__content,
+        .ic-notification__content,
+        .css-1fvx2xy-view-tabs__container,
+        .css-1lx4ap9-colHeader,
+        .css-71iz6n-view-rowHeader,
+        .css-b30avf-view-cell,
+        .css-137wjlz {
+            background: @base !important;
             color: @text !important;
         }
 
         .ig-row:hover,
         .css-1hb7i4d-view--inlineBlock-baseButton:hover > [class$="-baseButton__content"],
+        .css-1ds9jdt-view--inlineBlock-baseButton:hover > [class$="-baseButton__content"],
         .course-list-table-row:hover,
         .Button:hover,
         .btn:hover,
@@ -402,9 +421,6 @@
         .css-10mk03b-baseButton__content:hover,
         .css-1q0rd74-view--inlineBlock-baseButton:hover > [class$="-baseButton__content"],
         .mini-cal-month-and-year,
-        .mini_calendar .day:not(.other_month,
-        .today,
-        .has_event),
         .ef-item-row:hover,
         .ig-header,
         .accessible-toggler,
@@ -414,6 +430,9 @@
         .css-1jq357a-view-tab:hover,
         .tox .tox-mbtn:hover:not(:disabled),
         .css-1axera6-view--inlineBlock-baseButton:hover > [class$="-baseButton__content"],
+        #grades_summary a.toggle_comments_link:hover,
+        #grades_summary a.toggle_rubric_assessments_link:hover,
+        .ef-item-row.ef-item-selected,
         {
             background: @mantle;
             color: @text
@@ -449,7 +468,12 @@
         .css-84gyo1-view-link:is(button),
         .css-1l8k4me-radioInput__label,
         #edit_event .ui-tabs .ui-tabs-nav li.ui-state-hover a,
-        #edit_event .ui-tabs .ui-tabs-nav li:hover a {
+        #edit_event .ui-tabs .ui-tabs-nav li:hover a,
+        .standalone-icon::before,
+        .ui-widget-header a,
+        .css-1g6rimh-view-tab,
+        .css-fb5emw-view-tab,
+        .css-oqi6mv-menuItem__label {
             color: @text;
             text-shadow: 0 0;
         }
@@ -463,6 +487,9 @@
         .tox .tox-tbtn.tox-tbtn--enabled::after,
         .css-wplyrq-baseButton__content,
         .css-1hilv69-text,
+        .ui-tabs .ui-tabs-nav li.ui-tabs-active a,
+        a:link,
+        a:visited,
         math-field {
             color: @accent-color;
         }
@@ -499,10 +526,19 @@
         .css-vqv1g6-toggleDetails__toggle::before,
         .css-7utyer-view--inlineBlock-baseButton::before,
         .css-18f7mzf-checkboxFacade__facade::before,
+        .css-1ds9jdt-view--inlineBlock-baseButton::before,
+        .css-xmbiuu-view-tabs::before,
+        .css-fb5emw-view-tab::before,
+        .css-1g6rimh-view-tab::before,
+        .css-1dndbkc-menu::before,
+        .css-1g6rimh-view-tab::after,
+        .css-4znku8-view-link:focus,
         .css-1jxucsm-pill,
         .css-wgj13i-textArea__outline,
-        {
-            border-color: @accent-color
+        .discussion-read-state,
+        #msg.success {
+            border-color: @accent-color;
+            outline-color: @accent-color;
         }
 
         .css-benqwi-view-link:is(a):focus,
@@ -534,7 +570,9 @@
         .css-1ek001j-checkboxFacade__label,
         .css-1aihtnt-toggleFacade__label,
         .tox .tox-collection__item-accessory,
-        ._1g1ys1h {
+        ._1g1ys1h,
+        .discussion-pubdate,
+        .discussion-tododate {
             color: @subtext1 !important;
         }
 
@@ -557,8 +595,15 @@
         .css-17i83m2-baseButton__content,
         .css-1jos3kl-baseButton__content,
         .list-view a.active .nav-badge,
-        {
-            background: @accent-color;
+        .new-and-total-badge .total-items,
+        .read .discussion-read-state,
+        .css-1g6rimh-view-tab::after,
+        .css-xkdrr-menuItem:focus,
+        .css-xkdrr-menuItem:active,
+        .css-xkdrr-menuItem:hover,
+        .css-oqi6mv-menuItem__label:hover,
+        .css-xkdrr-menuItem:hover [class*="menuItem__label"] {
+            background: @accent-color !important;
             color: @surface0;
             border: none;
             fill: @surface0
@@ -721,8 +766,9 @@
         .Button--link:focus,
         .Button--link:active:focus,
         .Button--link[disabled]:focus,
-        .Button--icon-action {
-            background: transparent;
+        .Button--icon-action,
+        .icon-discussion .standalone-icon {
+            background: transparent !important;
         }
 
         .css-1nz9urh,
@@ -737,6 +783,14 @@
             color: @text
         }
 
+        .ic-notification.ic-notification--alert .ic-notification__icon {
+            background: @red;
+        }
+
+        .ic-notification.ic-notification--alert {
+            border-color: @red
+        }
+
         .course-list-favorite-course {
             color: @peach
         }
@@ -744,6 +798,15 @@
         .css-109d2ff-formFieldMessage,
         .css-1yqbktb-baseButton__content {
             color: @red
+        }
+
+        .css-yv4rwb-spinner__circleTrack {
+            stroke: @base;
+        }
+
+        .css-l9danx-spinner__circleSpin {
+            fill: @base;
+            stroke: @accent-color;
         }
 
         .css-1u0hia0-textInput__facade,
@@ -774,7 +837,6 @@
             border-color: @blue;
         }
 
-
         .ic-Form-control.ic-Form-control--checkbox input[type="checkbox"]:checked ~ .ic-Label::before {
             background-color: @base;
             background-position: center -1px;
@@ -795,19 +857,35 @@
             background: @crust;
             border-color: @surface0
         } // pressed button
-        [src="https://canvas.ucdavis.edu/courses/132940/files/17735108/preview"] {
-            background: #e5e5e5;
+        img[src="https://canvas.ucdavis.edu/courses/132940/files/17735108/preview"],
+        img[src="/cas/themes/images/ucdavis_logo.png"],
+        p[style*="background-color: #e5e5e5;"] {
+            background: @text !important;
         }
 
-        .btn.active {
+        .mimeClass-folder {
+            background-image: none;
+            mask: url("/dist/images/mimeClassIcons/folder-0a8e688b83.svg") no-repeat;
+            -webkit-mask: url("/dist/images/mimeClassIcons/folder-0a8e688b83.svg") no-repeat;
+            background: @text
+        } // files folder icon
+        .mimeClass-folder-locked {
+            background-image: none;
+            mask: url("/dist/images/mimeClassIcons/folder-locked-c4fe616478.svg") no-repeat;
+            -webkit-mask: url("/dist/images/mimeClassIcons/folder-locked-c4fe616478.svg") no-repeat;
+            background: @text
+        } // files locked folder icon
+        .btn.active,
+        .css-1ileuoz-menuItem {
             background: @surface0;
             border-color: #c7cdd1
-        } // hard coded yellow highlight not sure what the other cases are
+        }
         span[style="background-color: #fbeeb8;"] {
             color: @surface1
-        }
+        } // hard coded yellow highlight not sure what the other cases are
     }
 }
+
 // vim:ft=less
 /** 
 todo: 
