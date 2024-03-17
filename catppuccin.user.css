@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Catppuccin for UC Davis Canvas
-@version 0.0.3
+@version 0.1.1
 @namespace github.com/PuffyDucks/davis-canvas-dark-mode/
 @homepageURL https://github.com/PuffyDucks/davis-canvas-dark-mode
 @description Canvas dark mode implementation for UC Davis students using Catppuccin
@@ -39,12 +39,12 @@ url-prefix("https://cas.ucdavis.edu/cas/logout") {
         --ic-brand-global-nav-ic-icon-svg-fill: #ffffff;
         --ic-brand-global-nav-ic-icon-svg-fill--active: @peach;
         --ic-brand-global-nav-menu-item__text-color: #ffffff;
-        --ic-brand-global-nav-menu-item__text-color--active: #002855;
+        --ic-brand-global-nav-menu-item__text-color--active: @peach;
         --ic-brand-global-nav-avatar-border: #ffffff;
         --ic-brand-global-nav-menu-item__badge-bgd: @accent-color;
         --ic-brand-global-nav-menu-item__badge-bgd--active: var(--ic-brand-primary);
-        --ic-brand-global-nav-menu-item__badge-text: #000000;
-        --ic-brand-global-nav-menu-item__badge-text--active: #ffffff;
+        --ic-brand-global-nav-menu-item__badge-text: @base;
+        --ic-brand-global-nav-menu-item__badge-text--active: @base;
         --ic-brand-global-nav-logo-bgd: @crust;
         --ic-brand-header-image: url('https://instructure-uploads.s3.amazonaws.com/account_34380000000000001/attachments/6557608/nav_white_200x200.svg');
         --ic-brand-mobile-global-nav-logo: url('https://instructure-uploads.s3.amazonaws.com/account_34380000000000001/attachments/6557609/nav_color_200x200.svg');
@@ -99,7 +99,7 @@ url-prefix("https://cas.ucdavis.edu/cas/logout") {
             @surface0: #ccd0da;
             @base: #eff1f5;
             @mantle: #e6e9ef;
-            @crust: #dce0e8;
+            @crust: #131313;
         }
         ;
         @frappe: {
@@ -227,8 +227,6 @@ url-prefix("https://cas.ucdavis.edu/cas/logout") {
         #breadcrumbs,
         .ic-app-header__menu-list-item.ic-app-header__menu-list-item--active .ic-app-header__menu-list-link,
         .ic-Dashboard-header__layout,
-        .ic-DashboardCard__header_content,
-        .ic-DashboardCard,
         .css-1gto5tw-tray,
         .header-bar,
         .context_module,
@@ -245,7 +243,6 @@ url-prefix("https://cas.ucdavis.edu/cas/logout") {
         .ui-button,
         .css-1bs1z4i-view-tabs__container,
         .css-19b53hb-view-tab,
-        .ColorPicker__Container,
         .DashboardCardMenu__ColorPicker,
         .css-dvua1q-view--block-contextView__content,
         .css-j68kdy-formFieldLabel,
@@ -277,6 +274,7 @@ url-prefix("https://cas.ucdavis.edu/cas/logout") {
         .ic-Table.ic-Table--hover-row tbody tr:hover,
         .css-10f5v0f-pill,
         .pages.show .page-title,
+        .text,
         .fc-toolbar,
         .fc-view-container,
         .css-14chmi2-modal,
@@ -302,6 +300,7 @@ url-prefix("https://cas.ucdavis.edu/cas/logout") {
         .css-1mtgjqq-textInput,
         .css-10mk03b-baseButton__content,
         .css-152kj4z-checkboxFacade__facade,
+        .css-nq7u71-view--flex-flex,
         table.summary td,
         table.summary tbody th,
         #syllabus tr.date.date_passed td,
@@ -381,9 +380,6 @@ url-prefix("https://cas.ucdavis.edu/cas/logout") {
         .header__branding,
         .course-title,
         .ef-file-preview-button,
-        .mini_calendar .day:not(.other_month,
-        .today,
-        .has_event),
         #header h1,
         #msg.success,
         #footer,
@@ -393,7 +389,37 @@ url-prefix("https://cas.ucdavis.edu/cas/logout") {
         .css-1lx4ap9-colHeader,
         .css-71iz6n-view-rowHeader,
         .css-b30avf-view-cell,
-        .css-137wjlz {
+        .css-137wjlz,
+        .css-ktk67h-menuItemGroup__label,
+        .bottom-reply-with-box,
+        .ellipsible,
+        .ef-file-preview-header-filename,
+        .css-f32ptg-toggleDetails__summaryText,
+        .css-g1geo1-menuItem,
+        .css-1kdtqv3-tray__content,
+        .css-580er-view--flex-flex,
+        .css-njnxlh-baseButton__content,
+        .css-9wc24o-view-billboard,
+        .css-hp5vze-view-heading,
+        .css-tkqbvn-inlineSVG-svgIcon,
+        .ui-widget-content,
+        .css-1v8v5q1-optionItem,
+        .css-1h0il5s-view--inlineBlock-baseButton,
+        .css-vl75cv-baseButton__content,
+        .quiz-submission,
+        .score_value,
+        .module-sequence-footer .module-sequence-footer-content,
+        .css-1cjhwmr-view--block-modalBody,
+        .css-njggem-view-tabs__tabList,
+        #section_list .section.active .section_url,
+        .sjaBullet,
+        .question,
+        .no-touch .question.hover .move,
+        .touch .question .move,
+        .no-touch .question.hover .flag_question,
+        .touch .question .flag_question,
+        #quiz_edit_wrapper,
+        #ip_filters_dialog .filters .ip_filter:hover td {
             background: @base !important;
             color: @text !important;
         }
@@ -420,7 +446,6 @@ url-prefix("https://cas.ucdavis.edu/cas/logout") {
         .css-16oqx2e-view,
         .css-10mk03b-baseButton__content:hover,
         .css-1q0rd74-view--inlineBlock-baseButton:hover > [class$="-baseButton__content"],
-        .mini-cal-month-and-year,
         .ef-item-row:hover,
         .ig-header,
         .accessible-toggler,
@@ -433,9 +458,33 @@ url-prefix("https://cas.ucdavis.edu/cas/logout") {
         #grades_summary a.toggle_comments_link:hover,
         #grades_summary a.toggle_rubric_assessments_link:hover,
         .ef-item-row.ef-item-selected,
-        {
+        .css-g1geo1-menuItem:focus,
+        .css-g1geo1-menuItem:active,
+        .css-g1geo1-menuItem:hover,
+        .selected-assignment,
+        .activeDragTarget,
+        .css-7c2g3n-baseButton__content,
+        .css-qtiymx-optionItem,
+        .css-1h0il5s-view--inlineBlock-baseButton:hover > [class$="-baseButton__content"],
+        .css-1h0il5s-view--inlineBlock-baseButton:active > [class$="-baseButton__content"],
+        .css-vl75cv-baseButton__content:hover,
+        .ui-datepicker-header.ui-widget-header,
+        .ui-datepicker td span.ui-state-default.ui-state-hover,
+        .ui-datepicker td a.ui-state-default.ui-state-hover,
+        .stream_header:hover,
+        #calendar-feed-url-input,
+        .stream-details tr:hover,
+        #section_list li .section_url:hover,
+        #section_list li .section_url:focus,
+        .question .header {
+            background: @mantle !important;
+            color: @text !important;
+            box-shadow: none;
+        }
+
+        .ic-DashboardCard__header_content,
+        .ic-DashboardCard {
             background: @mantle;
-            color: @text
         }
 
         .ic-unread-badge {
@@ -473,8 +522,16 @@ url-prefix("https://cas.ucdavis.edu/cas/logout") {
         .ui-widget-header a,
         .css-1g6rimh-view-tab,
         .css-fb5emw-view-tab,
-        .css-oqi6mv-menuItem__label {
-            color: @text;
+        .css-oqi6mv-menuItem__label,
+        .css-1vfp3rz-text,
+        .css-1d91lml-menuItem__icon,
+        .mini-cal-month-and-year,
+        .user_points,
+        .mini_calendar .day:not(.other_month,
+        .today),
+        .content_summary,
+        .question .header .question_points_holder {
+            color: @text !important;
             text-shadow: 0 0;
         }
 
@@ -488,18 +545,30 @@ url-prefix("https://cas.ucdavis.edu/cas/logout") {
         .css-wplyrq-baseButton__content,
         .css-1hilv69-text,
         .ui-tabs .ui-tabs-nav li.ui-tabs-active a,
+        .css-1d00bd-baseButton__content,
         a:link,
         a:visited,
-        math-field {
+        math-field,
+        .css-z5l29p-view-link:is(a):hover,
+        .css-z5l29p-view-link:is(button):hover,
+        .css-z5l29p-view-link:is(a):active,
+        .css-z5l29p-view-link:is(button):active,
+        .css-z5l29p-view-link:is(a),
+        .css-z5l29p-view-link:is(button),
+        .css-1v7gzzc-text {
             color: @accent-color;
         }
 
         .css-1ktvcwe-view--inlineBlock-avatar,
         .css-wdjw8c-avatar__initials,
-        {
+        .css-17ytoa8-view--block-avatar,
+        .css-m7dc0-view--inlineBlock-avatar,
+        .nav > li > a:hover {
             background: @mantle;
             color: @accent-color
         }
+
+
 
         .css-jzme85-view--inlineBlock-baseButton::before,
         .css-ut4w68-view--inlineBlock::before,
@@ -531,11 +600,31 @@ url-prefix("https://cas.ucdavis.edu/cas/logout") {
         .css-fb5emw-view-tab::before,
         .css-1g6rimh-view-tab::before,
         .css-1dndbkc-menu::before,
+        .css-1ng17j9-view--inlineBlock-baseButton::before,
+        .css-19sfxsu-view--inlineBlock-baseButton::before,
+        .css-1pkpuv1-toggleFacade__facade::before,
+        .css-htn7vy-toggleFacade__facade::before,
+        .css-13hh2dx-toggleFacade__facade::before,
+        .css-15zpjvu-toggleDetails__toggle::before,
+        .css-vbc4le-view--inlineBlock-baseButton::before,
+        .css-bozyno-view--block::before,
         .css-1g6rimh-view-tab::after,
         .css-4znku8-view-link:focus,
         .css-1jxucsm-pill,
         .css-wgj13i-textArea__outline,
         .discussion-read-state,
+        .css-njnxlh-baseButton__content,
+        .css-16vv2sh-view--block::before,
+        .css-2bz9f9-view--block::before,
+        .css-1k57l45-toggleFacade__facade::before,
+        .css-41vlg4-toggleFacade__facade::before,
+        .css-duxoyy-toggleFacade__facade::before,
+        .css-ry14wo-fileDrop__labelContent:hover,
+        .css-1h0il5s-view--inlineBlock-baseButton,
+        .css-vl75cv-baseButton__content,
+        .css-7c2g3n-baseButton__content,
+        .css-z5l29p-view-link:focus,
+        .question.selected_single_question,
         #msg.success {
             border-color: @accent-color;
             outline-color: @accent-color;
@@ -544,6 +633,10 @@ url-prefix("https://cas.ucdavis.edu/cas/logout") {
         .css-benqwi-view-link:is(a):focus,
         .css-benqwi-view-link:is(button):focus {
             outline-color: @accent-color
+        }
+
+        #ColorPicker__Apply::before {
+            box-shadow: none;
         }
 
         .tox .tox-mbtn:focus:not(:disabled),
@@ -572,12 +665,19 @@ url-prefix("https://cas.ucdavis.edu/cas/logout") {
         .tox .tox-collection__item-accessory,
         ._1g1ys1h,
         .discussion-pubdate,
-        .discussion-tododate {
+        .discussion-tododate,
+        .profile_table .data_description,
+        #right-side p.email_channel,
+        .css-m97t26-text,
+        .signature,
+        .css-qbjizl-text,
+        .comment,
+        .comment_author_and_date,
+        .submission-pending-review,
+        .css-1orhfp7-toggleFacade__label {
             color: @subtext1 !important;
         }
 
-        .css-vl75cv-baseButton__content,
-        .css-vl75cv-baseButton__content:hover,
         .ic-unread-badge__unread-count,
         .unread_count,
         .css-9fgfkj-view--inlineBlock-badge,
@@ -585,13 +685,9 @@ url-prefix("https://cas.ucdavis.edu/cas/logout") {
         #minical .fc-state-highlight,
         .mini_calendar .day.today,
         .css-jfcg4h-view--inlineBlock-badge,
-        .css-1h0il5s-view--inlineBlock-baseButton:hover > [class$="-baseButton__content"],
-        .css-1h0il5s-view--inlineBlock-baseButton:active > [class$="-baseButton__content"],
         .nav-badge,
         .ui-menu a.ui-state-focus,
-        .css-7c2g3n-baseButton__content,
         #grades_summary .unread_dot,
-        .css-1h0il5s-view--inlineBlock-baseButton,
         .css-17i83m2-baseButton__content,
         .css-1jos3kl-baseButton__content,
         .list-view a.active .nav-badge,
@@ -601,12 +697,21 @@ url-prefix("https://cas.ucdavis.edu/cas/logout") {
         .css-xkdrr-menuItem:focus,
         .css-xkdrr-menuItem:active,
         .css-xkdrr-menuItem:hover,
-        .css-oqi6mv-menuItem__label:hover,
-        .css-xkdrr-menuItem:hover [class*="menuItem__label"] {
+        .css-xkdrr-menuItem:hover [class*="menuItem__label"],
+        .css-g1geo1-menuItem:focus,
+        .css-g1geo1-menuItem:active,
+        .css-g1geo1-menuItem:hover,
+        .css-19xvo4g-view--inlineBlock-badge,
+        .nav-pills > .active > a,
+        .nav-pills > .active > a:hover,
+        .css-7utyer-view--inlineBlock-baseButton:active > [class$="-baseButton__content"],
+        .unread-count,
+        .css-v6ykv-optionItem {
             background: @accent-color !important;
             color: @surface0;
             border: none;
-            fill: @surface0
+            fill: @surface0;
+            box-shadow: none;
         }
 
         .ic-unread-badge__total-count,
@@ -615,18 +720,16 @@ url-prefix("https://cas.ucdavis.edu/cas/logout") {
         .group_user_332489:hover,
         .group_user_332489:focus {
             background: @surface0;
-            color: @subtext1;
             border: none;
         }
 
+        .other_month {
+            color: @subtext1;
+        }
 
         a.active {
             border-left: 2px solid @text;
             color: @text
-        }
-
-        .css-19b53hb-view-tab {
-            border-bottom: none;
         }
 
         .css-1cnxpbl-view-panel__content,
@@ -733,6 +836,9 @@ url-prefix("https://cas.ucdavis.edu/cas/logout") {
         path[d="M7.72039 10.6479L8.3603 11.1813L6.75882 13.1025L8.36029 15.0239L7.72038 15.5573L5.6748 13.1024L7.72039 10.6479ZM10.2802 10.6479L12.3258 13.1024L10.2802 15.5573L9.64031 15.0239L11.2418 13.1025L9.6403 11.1813L10.2802 10.6479Z"] {
             fill: @text
         } // cloud bottom
+        path[d="M568.13.012 392 176.142l783.864 783.989L392 1743.87 568.13 1920l960.118-959.87z"] {
+            fill: @text
+        } // right facing arrow
         // conversation select
         div[style*="background-color: rgb(229, 242, 248);"] {
             background-color: @mantle !important;
@@ -767,7 +873,11 @@ url-prefix("https://cas.ucdavis.edu/cas/logout") {
         .Button--link:active:focus,
         .Button--link[disabled]:focus,
         .Button--icon-action,
-        .icon-discussion .standalone-icon {
+        .icon-discussion .standalone-icon,
+        .css-kgoivm-textInput__facade,
+        .css-1ktvcwe-view--inlineBlock-avatar,
+        .css-wdjw8c-avatar__initials,
+        .ColorPicker__Container {
             background: transparent !important;
         }
 
@@ -778,17 +888,57 @@ url-prefix("https://cas.ucdavis.edu/cas/logout") {
             border-color: @accent-color
         } // no results found box
         .alert-danger,
-        .alert-error {
+        .alert-error,
+        .alert {
             background: @mantle;
             color: @text
         }
 
-        .ic-notification.ic-notification--alert .ic-notification__icon {
+        .ic-notification.ic-notification--alert .ic-notification__icon,
+        {
             background: @red;
         }
 
-        .ic-notification.ic-notification--alert {
+        .ic-notification.ic-notification--alert,
+        .css-wb64wn-view-alert,
+        #questions.assessment_results .question .answers .answer.wrong_answer {
             border-color: @red
+        }
+
+        .css-18lnokh {
+            background: @red;
+            border-right: @red;
+        }
+
+        .css-htn7vy-toggleFacade__facade,
+        .css-13hh2dx-toggleFacade__facade,
+        .css-duxoyy-toggleFacade__facade,
+        .css-k4bct0-toggleFacade__facade {
+            background: @green;
+        }
+
+        .ig-list .ig-row.ig-published:not(.student-view)::before {
+            background-color: @green;
+            border-top: @green;
+            border-bottom: @green;
+        }
+
+        #right-side .events_list li.event i.icon-check,
+        #right-side .events_list li.todo i.icon-check,
+        #right-side .to-do-list li.event i.icon-check,
+        #right-side .to-do-list li.todo i.icon-check,
+        .context_module .icon-check,
+        .css-28qyla-inlineSVG-svgIcon-toggleFacade__iconSVG,
+        .ig-published:not(.student-view) .ig-type-icon,
+        .css-1ybmg2o-text {
+            color: @green;
+        }
+
+        .css-svglmx-toggleFacade__facade,
+        .css-1pkpuv1-toggleFacade__facade,
+        .css-1k57l45-toggleFacade__facade,
+        .css-41vlg4-toggleFacade__facade {
+            background: @mantle;
         }
 
         .course-list-favorite-course {
@@ -796,15 +946,36 @@ url-prefix("https://cas.ucdavis.edu/cas/logout") {
         }
 
         .css-109d2ff-formFieldMessage,
-        .css-1yqbktb-baseButton__content {
+        .css-1yqbktb-baseButton__content,
+        {
             color: @red
         }
 
-        .css-yv4rwb-spinner__circleTrack {
+        .Button--icon-action-rev:focus {
+            box-shadow: inset 0 0 0 2px @text;
+        }
+
+        .css-tfc09q-pill {
+            color: @red;
+            border-color: @red;
+            background-color: @base;
+        } // missing assignment on grades
+        .css-19b53hb-view-tab {
+            border-bottom: none;
+        }
+
+        .css-yv4rwb-spinner__circleTrack,
+        .css-1ycmo8t-spinner__circleTrack,
+        .css-hbp7hw-spinner__circleTrack,
+        .css-evvgp8-spinner__circleTrack {
             stroke: @base;
         }
 
-        .css-l9danx-spinner__circleSpin {
+        .css-l9danx-spinner__circleSpin,
+        .css-htu4nv-spinner__circleSpin,
+        .css-1luquby-spinner__circleSpin,
+        .css-gx2mnl-spinner__circleSpin,
+        .css-1h3f2fu-spinner__circleSpin {
             fill: @base;
             stroke: @accent-color;
         }
@@ -813,10 +984,6 @@ url-prefix("https://cas.ucdavis.edu/cas/logout") {
         .css-2fx0y3-textInput__facade,
         .css-2fx0y3-textInput__facade::before {
             border: 0.0625rem solid @red
-        }
-
-        .css-1jq357a-view-tab {
-            border-color: @text
         }
 
         .css-1nr2bfd-checkboxFacade__facade,
@@ -838,7 +1005,6 @@ url-prefix("https://cas.ucdavis.edu/cas/logout") {
         }
 
         .ic-Form-control.ic-Form-control--checkbox input[type="checkbox"]:checked ~ .ic-Label::before {
-            background-color: @base;
             background-position: center -1px;
             border-color: var(--ic-brand-font-color-dark);
         } // calculate only on graded checkbox
@@ -853,7 +1019,9 @@ url-prefix("https://cas.ucdavis.edu/cas/logout") {
         .Button--active.ui-button,
         .ui-button.ui-state-active:hover,
         .ui-button.ui-state-active,
-        .ui-progressbar .ui-button.ui-widget-header {
+        .ui-progressbar .ui-button.ui-widget-header,
+        #questions.assessment_results .question .header,
+        .css-uxw84v-radioInput__facade {
             background: @crust;
             border-color: @surface0
         } // pressed button
@@ -875,14 +1043,52 @@ url-prefix("https://cas.ucdavis.edu/cas/logout") {
             -webkit-mask: url("/dist/images/mimeClassIcons/folder-locked-c4fe616478.svg") no-repeat;
             background: @text
         } // files locked folder icon
+        .ui-dialog .ui-dialog-titlebar-close span {
+            background-image: none;
+            mask: url("/dist/images/icon-x-black-163c6230a4.svg") no-repeat;
+            -webkit-mask: url(/dist/images/icon-x-black-163c6230a4.svg) 50% 50 no-repeat;
+            mask-size: contain;
+            background: @text
+        } // x button
+        .ui-datepicker .ui-datepicker-header .ui-datepicker-prev {
+            background-image: none;
+            mask: url("/dist/images/icon-arrow-left-98868663f2.svg") 50% 50% no-repeat;
+            -webkit-mask: url("/dist/images/icon-arrow-left-98868663f2.svg") no-repeat;
+            mask-size: 12px;
+            background: @text
+        }
+
+        .ui-datepicker .ui-datepicker-header .ui-datepicker-next {
+            background-image: none;
+            mask: url("/dist/images/icon-arrow-right-2bbc032252.svg") 50% 50% no-repeat;
+            -webkit-mask: url("/dist/images/icon-arrow-right-2bbc032252.svg") no-repeat;
+            mask-size: 12px;
+            background: @text
+        }
+
+        .ui-datepicker td span.ui-state-default.ui-state-active,
+        .ui-datepicker td .ui-progressbar span.ui-state-default.ui-widget-header,
+        .ui-progressbar .ui-datepicker td span.ui-state-default.ui-widget-header,
+        .ui-datepicker td a.ui-state-default.ui-state-active,
+        .ui-datepicker td .ui-progressbar a.ui-state-default.ui-widget-header,
+        .ui-progressbar .ui-datepicker td a.ui-state-default.ui-widget-header {
+            color: @surface0;
+            border-color: @accent-color;
+        }
+
         .btn.active,
         .css-1ileuoz-menuItem {
             background: @surface0;
-            border-color: #c7cdd1
+            border-color: @text;
         }
+
         span[style="background-color: #fbeeb8;"] {
             color: @surface1
         } // hard coded yellow highlight not sure what the other cases are
+        #root_reply_message_for_1275145,
+        .css-137wjlz {
+            margin: 0;
+        }
     }
 }
 
