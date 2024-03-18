@@ -21,7 +21,7 @@
 ## More info
 Latte is light mode, frappe is dark, macchiato is darker, and mocha is darkest. 
 
-A few buttons or pages may have been missed, such as for quizzes. If you find any issues, feel free to let me know!😸 
+A few buttons or pages may have been missed, such as for quizzes. If you find any issues, feel free to let me know! 😸 
 
 <p align="center">
     <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/footers/gray0_ctp_on_line.svg?sanitize=true" />
